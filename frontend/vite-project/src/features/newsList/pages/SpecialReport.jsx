@@ -1,9 +1,10 @@
 import React from 'react'
+import NewsFeed from '../components/NewsFeed'
 
 const SpecialReport = () => {
   return (
     <div>
-        <h1>Special Report</h1>
+        <NewsFeed category="entertainment" title="Special-Report" />;
       
     </div>
   )

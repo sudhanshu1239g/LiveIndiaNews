@@ -4,7 +4,7 @@ import NewsFeed from '../components/NewsFeed'
 const EconomyPage = () => {
   return (
     <div>
-        return <NewsFeed category="business" title="Economy & Markets" />;
+        <NewsFeed category="business" title="Economy & Markets" />;
       
     </div>
   )

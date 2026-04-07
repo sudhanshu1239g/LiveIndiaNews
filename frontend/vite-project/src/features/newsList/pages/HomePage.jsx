@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNews } from '../../../hooks/useNews';
+import NewsFeed from '../components/NewsFeed'
 
 const HomePage = () => {
   const { articles, loading } = useNews('general');
@@ -11,7 +12,7 @@ const HomePage = () => {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+ /*   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <header className="mb-12 border-l-8 border-red-600 pl-6">
         <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">Top Headlines</h1>
         <p className="text-slate-500 mt-2 font-medium italic">Verified real-time updates across the nation.</p>
@@ -55,7 +56,12 @@ const HomePage = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div>*/
+    <>
+    <NewsFeed category="general" title="Economy & Markets" />;
+    </>
+     
+
   );
 };
 

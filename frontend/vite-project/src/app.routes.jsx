@@ -5,7 +5,7 @@ import HomePage from './features/newsList/pages/HomePage';
 import PoliticsPage from './features/newsList/pages/PoliticsPage';
 import EconomyPage from './features/newsList/pages/EconomyPage';
 import SpecialReport from './features/newsList/pages/SpecialReport';
-import NewsDetail from './features/newsList/pages/NewsDetail';
+import SportsPage from './features/newsList/pages/SportsPage';
 
 
 export const router = createBrowserRouter([
@@ -17,7 +17,8 @@ export const router = createBrowserRouter([
             { path: "/politics", element: <PoliticsPage /> },
             { path: "/economy", element: <EconomyPage /> },
             { path: "/special-report", element: <SpecialReport /> },
-            { path: "/news/:id", element: <NewsDetail /> }
+            { path: "/sports", element: <SportsPage /> }
+            
         ]
     }
 ]);
