@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { io } from 'socket.io-client';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
-const socket = io('http://localhost:8000'); // Your Backend Port
+const socket = io(API_URL, {
+    withCredentials: true,
+    // Add this to help Socket.io deal with serverless environments if you stay on Vercel
+    transports: ['polling', 'websocket'] 
+});
 
 export const useNews = (category) => {
   const [articles, setArticles] = useState([]);
@@ -13,7 +18,7 @@ export const useNews = (category) => {
       try {
         setLoading(true);
         // Calling your backend dynamic route: /api/news/:category
-        const response = await axios.get(`http://localhost:8000/api/news/${category}`);
+        const response = await axios.get(`${API_BASE_URL}/api/news/${category}`);
         setArticles(response.data);
       } catch (err) {
         console.error("Error fetching news:", err);

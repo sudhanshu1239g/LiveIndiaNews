@@ -13,11 +13,12 @@ const PORT = process.env.PORT || 8000;
 
 // Create HTTP Server
 const server = http.createServer(app);
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
 
 // Initialize Socket.io
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:5173',
+        origin: frontendUrl,
         credentials: true
     }
 });
@@ -48,3 +49,4 @@ const startServer = async () => {
 };
 
 startServer();
+module.exports = server;
