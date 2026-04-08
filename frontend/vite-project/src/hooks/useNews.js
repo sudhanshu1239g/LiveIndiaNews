@@ -18,7 +18,7 @@ export const useNews = (category) => {
       try {
         setLoading(true);
         // Calling your backend dynamic route: /api/news/:category
-        const response = await axios.get(`${API_BASE_URL}/api/news/${category}`);
+        const response = await axios.get(`${API_URL}/api/news/${category}`);
         setArticles(response.data);
       } catch (err) {
         console.error("Error fetching news:", err);
